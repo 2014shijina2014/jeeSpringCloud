@@ -1,0 +1,198 @@
+<html>
+<head>
+	<title>请假单管理</title>
+	<meta name="decorator" content="default"/>
+	  <meta charset="utf-8">
+	  <!--script src="../../../js/headjsp.js"></script-->
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+	<meta name="renderer" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=8,IE=9,IE=10" />
+	<meta http-equiv="Expires" content="0"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Cache-Control" content="no-store">
+	<script src="../../../../static/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+	<script src="../../../../static/jquery/jquery-migrate-1.1.1.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="../../../../static/TableDnD/jquery.tablednd.js"></script>
+	<script src="../../../../static/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="../../../../static/jquery-validation/1.14.0/jquery.validate.min.js" type="text/javascript"></script>
+	<script src="../../../../static/jquery-validation/1.14.0/localization/messages_zh.min.js" type="text/javascript"></script>
+	<link href="../../../../static/jquery-jbox/2.3/Skins/Bootstrap/jbox.min.css" rel="stylesheet" />
+	<script src="../../../../static/jquery-jbox/2.3/jquery.jBox-2.3.min.js" type="text/javascript"></script>
+	<script src="../../../../static/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+	<link href="../../../../static/My97DatePicker/skin/WdatePicker.css" rel="stylesheet" type="text/css">
+	<script src="../../../../static/pace/pace.min.js"></script>
+	<script src="../../../../static/metisMenu/jquery.metisMenu.js"></script>
+	<link href="../../../../static/iCheck/custom.css" rel="stylesheet" />
+	<script src="../../../../static/iCheck/icheck.min.js"></script>
+	<script src="../../../../static/iCheck/icheck-init.js"></script>
+	<link href="../../../../static/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+	<script src="../../../../static/dataTables/jquery.dataTables.js"></script>
+	<script src="../../../../static/dataTables/dataTables.bootstrap.js"></script>
+
+	<!-- jeespring -->
+	<link href="../../../../static/common/jeespring.css" type="text/css" rel="stylesheet" />
+	<script src="../../../../static/common/jeespring.js" type="text/javascript"></script>
+	<script src="../../../../static/common/fullscreen.js" type="text/javascript"></script>
+
+	<!-- jquery ui -->
+	<script src="../../../../static/jquery-ui/jquery-ui.min.js"></script>
+
+	<!-- 引入bootstrap插件 -->
+	<!-- bootswatch主题效果不怎么好，停止切换，使用官网的默认版本，如果你想切换主题请访问http://bootswatch.com/下载最新版版主题，by刘高峰 -->
+	<!--  <link href="'+ctxStatic+'/bootstrap/3.3.4/css_default/bootstrap.min.css" type="text/css" rel="stylesheet" />-->
+	<link href="../../../../static/bootstrap/3.3.4/css_default/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<script src="../../../../static/bootstrap/3.3.4/js/bootstrap.min.js"  type="text/javascript"></script>
+	<link href="../../../../static/awesome/4.4/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="../../../../static/common/css/style.css?v=3.2.0" type="text/css" rel="stylesheet" />
+
+	<!-- 引入layer插件 -->
+	<script src="../../../../static/layer-v2.0/layer/layer.js"></script>
+	<link rel="stylesheet" href="../../../../static/layer-v2.0/layer/skin/layer.css" id="layui_layer_skinlayercss" style="">
+	<script src="../../../../static/layer-v2.0/layer/laydate/laydate.js"></script>
+
+	<!--引入webuploader-->
+	<link rel="stylesheet" type="text/css" href="../../../../static/webuploader-0.1.5/webuploader.css">
+	<script type="text/javascript" src="../../../../static/webuploader-0.1.5/webuploader.js"></script>
+
+	<link href="../../../../static/iCheck/custom.css" rel="stylesheet" />
+	<script src="../../../../static/iCheck/icheck.min.js"></script>
+	<script src="../../../../static/iCheck/icheck-init.js"></script>
+
+	<!-- 引入自定义文件 -->
+	<script src="../../../../static/common/mustache.min.js" type="text/javascript"></script>
+	<script src="../../../../static/common/content.js" type="text/javascript"></script>
+	<link href="../../../../static/common/css/animate.css" type="text/css" rel="stylesheet" />
+	<link href="../../../../static/common/css/login.css" type="text/css" rel="stylesheet" />
+
+	<script src="../../../plugins/jqgrid/jquery.jqGrid.min.js"></script>
+	<script src="../../../libs/vue.min.js"></script>
+	<script src="../../../libs/router.js"></script>
+	<!--script src="../../../libs/app.js"></script-->
+	<script src="../../../plugins/layer/layer.js"></script>
+	<script src="../../../js/common.js"></script>
+
+	<script type="text/javascript">
+        $(document).ready(function() {
+            function init() {
+                laydate({
+                    elem: '#beginDate', //目标元素。由于laydate.js封装了一个轻量级的选择器引擎，因此elem还允许你传入class、tag但必须按照这种方式 '#id .class'
+                    event: 'focus' //响应事件。如果没有传入event，则按照默认的click
+                });
+                laydate({
+                    elem: '#endDate', //目标元素。由于laydate.js封装了一个轻量级的选择器引擎，因此elem还允许你传入class、tag但必须按照这种方式 '#id .class'
+                    event: 'focus' //响应事件。如果没有传入event，则按照默认的click
+                });
+            };
+        });
+	</script>
+</head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content" id="rrapp">
+	<div class="ibox">
+
+    <div class="ibox-content">
+	
+	<!--查询条件-->
+	<div class="row">
+	<div class="col-sm-12">
+	<form id="searchForm" modelAttribute="formLeavem" action="../../../../rest/test/one/formLeave/list" method="post" class="form-inline">
+		<input id="orderBy" name="orderBy" type="hidden" value="beginDate DESC"><!-- 支持排序 -->
+<div class="form-group">
+			<span>员工：</span>
+	<input id="userId" name="user.id" class="form-control input-sm" type="hidden" value="">
+	<div class="input-group">
+		<input id="userName" name="user.name" readonly="readonly" type="text" value="" data-msg-required="" class="form-control input-sm" style="">
+       		 <span class="input-group-btn">
+	       		 <button type="button" id="userButton" class="btn  btn-sm   btn-white  "><i class="fa fa-search"></i>
+	             </button> 
+       		 </span>
+       		
+    </div>
+	 <label id="userName-error" class="error" for="userName" style="display:none"></label>
+
+		 </div>	
+	</form>
+	<br/>
+	</div>
+	</div>
+	
+	<!-- 工具栏 -->
+	<div class="row">
+	<div class="col-sm-12">
+		<div class="pull-left">
+				<button  class="btn btn-white btn-sm " @click="search()" ><i class="fa fa-search"></i> 查询</button>
+
+				<button  class="btn btn-white btn-sm " onclick="reset()" ><i class="fa fa-refresh"></i> 重置</button>
+
+				<button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="left" @click="addForm()" title="添加"><i class="fa fa-plus"></i> 添加</button>
+
+			    <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="left" @click="editFormSelect()" title="修改"><i class="fa fa-file-text-o"></i> 修改</button>
+
+				<button class="btn btn-white btn-sm" onclick="deleteAll()" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash-o"> 删除</i></button>
+		
+				<button id="btnImport" class="btn btn-white btn-sm " data-toggle="tooltip" data-placement="left" title="导入"><i class="fa fa-folder-open-o"></i> 导入</button>
+
+				<button id="btnExport" class="btn btn-white btn-sm " data-toggle="tooltip" data-placement="left" title="导出"><i class="fa fa-file-excel-o"></i> 导出</button>
+
+	       		<button class="btn btn-white btn-sm " data-toggle="tooltip" data-placement="left" onclick="sortOrRefresh()" title="刷新"><i class="glyphicon glyphicon-repeat"></i> 刷新</button>
+		
+			</div>
+		<div class="pull-right">
+
+		</div>
+	</div>
+	</div>
+	
+	<!-- 表格 -->
+	<table id="contentTable" class="table table-hover table-condensed dataTables-example dataTable">
+		<thead>
+			<tr>
+				<th> <input type="checkbox" class="i-checks"></th>
+				<th  class="sort-column user.name">员工</th>
+				<th  class="sort-column office.name">归属部门</th>
+				<th  class="sort-column area.name">归属区域</th>
+				<th  class="sort-column beginDate">请假开始日期</th>
+				<th  class="sort-column endDate">请假结束日期</th>
+				<th  class="sort-column remarks">备注信息</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr  v-for="formLeavem in page" >
+				<td> <input type="checkbox" :id="formLeavem.id" class="i-checks"></td>
+				<td><a  href="#" onclick="openDialogView('查看请假单', '${ctx}/mvvmoa/formLeavem/form?id={{formLeavem.id}}','800px', '500px')">
+					{{formLeavem.user.name}}-{{formLeavem.office.name}}-{{formLeavem.area.name}}
+				</a></td>
+				<td>
+					{{formLeavem.office.name}}
+				</td>
+				<td>
+					{{formLeavem.area.name}}
+				</td>
+				<td>
+					{{formLeavem.beginDate}}
+				</td>
+				<td>
+					{{formLeavem.endDate}}
+				</td>
+				<td>
+					{{formLeavem.remarks}}
+				</td>
+				<td>
+					<a href="#" v-on:click="view(formLeavem.id)"  class="btn btn-info btn-xs" ><i class="fa fa-search-plus"></i> 查看</a>
+					<a href="#" v-on:click="editform(formLeavem.id)" class="btn btn-success btn-xs" ><i class="fa fa-edit"></i> 修改</a>
+					<a href="#" v-on:click="deletex(formLeavem.id)"   class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> 删除</a>
+				</td>
+			</tr>
+			
+		</tbody>
+	</table>
+	
+		<!-- 分页代码 -->
+	<table:page page="${page}"></table:page>
+	<br/>
+	<br/>
+	</div>
+	</div>
+</div>
+	<script src="../../../js/SpringUI.js"></script>
+	<script src="../../../js/select.js"></script>
+</body>
+</html>
