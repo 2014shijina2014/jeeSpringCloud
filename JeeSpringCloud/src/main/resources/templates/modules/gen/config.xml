@@ -4,7 +4,6 @@
 	<category>
 		<category value="curd" label="增删改查（单表）">
 			<template>curd/controller.xml</template>
-			<template>rest/restController.xml</template>
 			<template>curd/service.xml</template>
 			<template>dao/dao.xml</template>
 			<template>dao/entity.xml</template>
@@ -18,10 +17,6 @@
 			<template>curd/viewListJS.xml</template>
 			<template>curd/viewListVue.xml</template>
 			<template>curd/viewSelect.xml</template>
-			<template>curd/viewTotal.xml</template>
-			<template>curd/viewTotalCSS.xml</template>
-			<template>curd/viewTotalJS.xml</template>
-			<template>curd/viewTotalMap.xml</template>
 		</category>
 		<category value="curd_many" label="增删改查（一对多）">
 			<template>curd/controller.xml</template>
