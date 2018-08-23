@@ -28,7 +28,7 @@ public class JeeSpringConsumer {
         String toMailAddr=list.get(0);
         String subject=list.get(1);
         String message=list.get(2);
-        SendMailUtil.sendCommonMail(toMailAddr,subject,message);
+        SendMailUtil.sendCommonMail(toMailAddr,subject,message);  
     }
 
     @JmsListener(destination = JeeSpringProducer.ActiveMQQueueKeySendMailObject)
