@@ -3,14 +3,15 @@
 演示版地址：http://yocity.imwork.net:10858/admin?login<br>
 官网地址：https://jeespring.icoc.bz/<br>
 有部分功能会提示：演示版启用为系统能正常演示，暂时不允许操作！<br>
-定时任务调度、服务器监控、平台监控、平台设置、开发平台、单点登录、Redis分布式高速缓存、会员、营销、在线用户、日志、在线人数、访问次数、调用次数、直接集群、接口文档、生成模块、代码实例、安装视频、教程文档<br>
-代码生成(单表、主附表、树表、列表和表单、redis高速缓存对接代码、图表统计、地图统计、vue.js)、dubbo、springCloud<br>
+模块包含定时任务调度、服务器监控、平台监控、异常邮件监控、服务器Down机邮件监控、平台设置、开发平台、邮件监控、图表监控、地图监控、单点登录、Redis分布式高速缓存、<br>
+ActiveMQ队列、会员、营销、在线用户、日志、在线人数、访问次数、调用次数、直接集群、接口文档、生成模块、代码实例、安装视频、教程文档、dubbo（待开发）、springCloud、<br>
+RedisMQ队列（待开发）、代码生成(单表、主附表、树表、列表和表单、增删改查云接口、redis高速缓存对接代码、图表统计、地图统计、vue.js)、工作流（待开发）<br>
 
-JeeSpring官方QQ群：328910546
-JeeSpring官方QQ群(VIP)：558699173
+JeeSpringCloud官方QQ群：328910546
+JeeSpringCloud官方QQ群(VIP)：558699173
 群内含各种工具、文档、视频教程下载
 
-<img alt="微服务" class="md_relative_url" src="./document/001.jpg">
+<img alt="微服务" class="md_relative_url" src="./document/001.png">
 <img alt="微服务" class="md_relative_url" src="./document/RepositoryService.jpg">
 <img alt="微服务" class="md_relative_url" src="./document/login6.png">
 <img alt="微服务" class="md_relative_url" src="./document/login1.png">
@@ -25,7 +26,7 @@ JeeSpring官方QQ群(VIP)：558699173
 <img alt="微服务" class="md_relative_url" src="./document/03.png">
 <img alt="微服务" class="md_relative_url" src="./document/04.png">
 
- JeeSpring基于SpringBoot+SpringMVC+Mybatis+Redis+SpringCloud+Vue.js微服务分布式代码生成的敏捷开发系统架构。项目代码简洁,注释丰富,上手容易,还同时集中分布式、微服务,同时包含许多基础模块(用户管理,角色管理,部门管理,字典管理等10个模块。成为大众认同、大众参与、成就大众、大众分享的开发平台。JeeSpring官方qq群(328910546)。代码生成前端界面、底层代码（spring mvc、mybatis、Spring boot、Spring Cloud、微服务的生成）、安全框架、视图框架、服务端验证、任务调度、持久层框架、数据库连接池、缓存框架、日志管理、IM等核心技术。努力用心为大中小型企业打造全方位J2EE企业级平台ORM/Redis/Service仓库开发解决方案。一个RepositoryService仓库就直接实现dubbo、微服务、基础服务器对接接口和实现。
+ JeeSpringCloud基于SpringBoot+SpringMVC+Mybatis+Redis+SpringCloud+Vue.js微服务分布式代码生成的敏捷开发系统架构。项目代码简洁,注释丰富,上手容易,还同时集中分布式、微服务,同时包含许多基础模块(用户管理,角色管理,部门管理,字典管理等10个模块。成为大众认同、大众参与、成就大众、大众分享的开发平台。JeeSpring官方qq群(328910546)。代码生成前端界面、底层代码（spring mvc、mybatis、Spring boot、Spring Cloud、微服务的生成）、安全框架、视图框架、服务端验证、任务调度、持久层框架、数据库连接池、缓存框架、日志管理、IM等核心技术。努力用心为大中小型企业打造全方位J2EE企业级平台ORM/Redis/Service仓库开发解决方案。一个RepositoryService仓库就直接实现dubbo、微服务、基础服务器对接接口和实现。
 
  努力用心为大中小型企业打造全方位J2EE企业级平台开发解决方案。
 
@@ -93,11 +94,20 @@ RepositoryService仓库,提供Service接口和多种实现,可进行配置实现
 8.	图表统计页面
 9.	地图统计页面
 
+版权声明
+本软件使用 Apache License 2.0 协议，请严格遵照协议内容：
+
+需要给代码的用户一份Apache Licence。
+在延伸的代码中（修改和有源代码衍生的代码中）需要带有原来代码中的协议，商标，专利声明和其他原来作者规定需要包含的说明。
+Apache Licence也是对商业应用友好的许可。使用者也可以在需要的时候修改代码来满足需要并作为开源或商业产品发布/销售
+你可以二次包装出售，但还请保留文件中的版权和作者信息，并在你的产品说明中注明JeeSpring。
+你可以以任何方式获得，你可以修改包名或类名，但还请保留文件中的版权和作者信息。
+
 # 如何交流、反馈、参与贡献？
 
-JeeSpring官方QQ群：328910546
+JeeSpringCloud官方QQ群：328910546
 
-JeeSpring官方QQ群(VIP)：558699173
+JeeSpringCloud官方QQ群(VIP)：558699173
 
 官方QQ群(VIP)提供：
 
@@ -114,7 +124,7 @@ JeeSpring官方QQ群(VIP)：558699173
 
 GitHub：
 
-JeeSpring开源中国：http://git.oschina.net/JeeHuangBingGui/JeeSpring
+JeeSpring开源中国：https://gitee.com/JeeHuangBingGui/jeeSpringCloud
 
 
 # 大众认同、大众参与、成就大众、大众分享的开发平台。
