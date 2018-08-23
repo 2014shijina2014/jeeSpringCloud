@@ -21,7 +21,7 @@ import java.util.Date;
 @Component
 public class AOPService {
     private static Logger logger = LoggerFactory.getLogger(AOPService.class);
-    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
     // defined aop pointcut
     //@Pointcut("execution(* com.company.project.modules.*.*(..))")
     //@Pointcut("execution(* com.company.project.modules..*.*(..))")
