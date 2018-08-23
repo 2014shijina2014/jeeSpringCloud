@@ -26,7 +26,7 @@ import java.util.List;
 @Api(value="ActiveMQ队列任务云接口", description="ActiveMQ队列任务云接口")
 public class JeeSpringProducerRestController {
     @Autowired
-    private JeeSpringProducer jeeSpringProducer;
+    private JeeSpringProducer jeeSpringProducer;   
 
     @RequestMapping(value = {"sendMessage"},method ={RequestMethod.POST,RequestMethod.GET})
     @ApiOperation(value="ActiveMQ队列云发送信息(Content-Type为text/html)", notes="ActiveMQ队列云发送信息(Content-Type为text/html)")
