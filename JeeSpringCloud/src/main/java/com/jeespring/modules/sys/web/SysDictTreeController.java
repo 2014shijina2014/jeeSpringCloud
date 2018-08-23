@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.jeespring.modules.sys.service.SysConfigService;
 import org.apache.shiro.authz.annotation.Logical;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +37,8 @@ import com.jeespring.modules.sys.service.SysDictTreeService;
 @Controller
 @RequestMapping(value = "${adminPath}/sys/sysDictTree")
 public class SysDictTreeController extends AbstractBaseController {
-
+	@Autowired
+	private SysConfigService sysConfigService;
 	@Autowired
 	private SysDictTreeService sysDictTreeService;
 	
@@ -97,6 +99,11 @@ public class SysDictTreeController extends AbstractBaseController {
 	//@RequiresPermissions(value={"sys:sysDict:add","sys:sysDict:edit"},logical=Logical.OR)
 	@RequestMapping(value = "save")
 	public String save(SysDictTree sysDict, Model model, RedirectAttributes redirectAttributes) {
+		if(sysConfigService.isDemoMode()){
+			addMessage(redirectAttributes, sysConfigService.isDemoModeDescription());
+			return "redirect:" + adminPath + "/sys/sysConfigTree/?repage";
+		}
+
 		if (!beanValidator(model, sysDict)){
 			return form(sysDict, model);
 		}
@@ -111,6 +118,11 @@ public class SysDictTreeController extends AbstractBaseController {
 	//@RequiresPermissions("sys:sysDict:del")
 	@RequestMapping(value = "delete")
 	public String delete(SysDictTree sysDict, RedirectAttributes redirectAttributes) {
+		if(sysConfigService.isDemoMode()){
+			addMessage(redirectAttributes, sysConfigService.isDemoModeDescription());
+			return "redirect:" + adminPath + "/sys/sysConfigTree/?repage";
+	 	}
+
 		sysDictTreeService.delete(sysDict);
 		addMessage(redirectAttributes, "删除数据字典成功");
 		return "redirect:"+Global.getAdminPath()+"/sys/sysDictTree/?repage";

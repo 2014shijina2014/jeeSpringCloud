@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.jeespring.modules.sys.service.SysConfigService;
 import org.apache.shiro.authz.annotation.Logical;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,8 @@ import com.jeespring.modules.sys.service.SysConfigTreeService;
 @Controller
 @RequestMapping(value = "${adminPath}/sys/sysConfigTree")
 public class SysConfigTreeController extends AbstractBaseController {
+	@Autowired
+	private SysConfigService sysConfigService;
 
 	@Autowired
 	private SysConfigTreeService sysConfigTreeService;
@@ -102,6 +105,10 @@ public class SysConfigTreeController extends AbstractBaseController {
 	//@RequiresPermissions(value={"sys:sysConfig:add","sys:sysConfig:edit"},logical=Logical.OR)
 	@RequestMapping(value = "save")
 	public String save(SysConfigTree sysConfig, Model model, RedirectAttributes redirectAttributes) {
+		if(sysConfigService.isDemoMode()){
+			addMessage(redirectAttributes, sysConfigService.isDemoModeDescription());
+			return "redirect:" + adminPath + "/sys/sysConfigTree/?repage";
+		}
 		if (!beanValidator(model, sysConfig)){
 			return form(sysConfig, model);
 		}
@@ -116,6 +123,11 @@ public class SysConfigTreeController extends AbstractBaseController {
 	//@RequiresPermissions("sys:sysConfig:del")
 	@RequestMapping(value = "delete")
 	public String delete(SysConfigTree sysConfig, RedirectAttributes redirectAttributes) {
+		if(sysConfigService.isDemoMode()){
+			addMessage(redirectAttributes, sysConfigService.isDemoModeDescription());
+			return "redirect:" + adminPath + "/sys/sysConfigTree/?repage";
+		}
+
 		sysConfigTreeService.delete(sysConfig);
 		addMessage(redirectAttributes, "删除系统配置成功");
 		return "redirect:"+Global.getAdminPath()+"/sys/sysConfigTree/?repage";
