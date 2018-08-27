@@ -1,5 +1,7 @@
 ﻿#JeeSpringCloud
 
+帮忙标星、点赞，申请码云最有价值开源项
+
 演示版地址：http://yocity.imwork.net:10858/admin?login<br>
 官网地址：https://jeespring.icoc.bz/<br>
 论坛社区：<a href="https://jeespring.kf5.com/hc/community/topic/" target="_blank">https://jeespring.kf5.com/hc/community/topic/</a><br>
