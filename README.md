@@ -10,8 +10,7 @@
 ActiveMQ队列、会员、营销、在线用户、日志、在线人数、访问次数、调用次数、直接集群、接口文档、生成模块、代码实例、安装视频、教程文档、dubbo（待开发）、springCloud、<br>
 RedisMQ队列（待开发）、代码生成(单表、主附表、树表、列表和表单、增删改查云接口、redis高速缓存对接代码、图表统计、地图统计、vue.js)、工作流（待开发）<br>
 
-JeeSpringCloud官方QQ群：328910546
-JeeSpringCloud官方QQ群(VIP)：558699173
+JeeSpringCloud官方QQ群：328910546<br>
 群内含各种工具、文档、视频教程下载
 
 <img alt="微服务" class="md_relative_url" src="./document/001.png">
@@ -108,11 +107,9 @@ Apache Licence也是对商业应用友好的许可。使用者也可以在需要
 
 # 如何交流、反馈、参与贡献？
 
-JeeSpringCloud官方QQ群：328910546
+JeeSpringCloud官方QQ群：328910546<br>
 
-JeeSpringCloud官方QQ群(VIP)：558699173
-
-官方QQ群(VIP)提供：
+官方QQ群提供：
 
 1、详细部署文档。
 
