@@ -1,4 +1,4 @@
-﻿#JeeSpring
+﻿#JeeSpringCloud
 
 演示版地址：http://yocity.imwork.net:10858/admin?login<br>
 官网地址：https://jeespring.icoc.bz/<br>
