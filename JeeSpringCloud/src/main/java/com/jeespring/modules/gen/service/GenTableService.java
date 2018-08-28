@@ -14,7 +14,7 @@ import com.jeespring.modules.gen.entity.GenTableColumn;
 import com.jeespring.modules.gen.util.GenUtils;
 
 import java.util.Iterator;
-import java.util.List;
+import java.util.List;       
 
 import com.jeespring.modules.sys.dao.DictDao;
 import com.jeespring.modules.sys.entity.Dict;
