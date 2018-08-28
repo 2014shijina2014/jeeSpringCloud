@@ -31,6 +31,7 @@ JeeSpringCloud官方QQ群：328910546<br>
 <img alt="微服务" class="md_relative_url" src="./document/login5.png">
 <img alt="微服务" class="md_relative_url" src="./document/07.png">
 <img alt="微服务" class="md_relative_url" src="./document/01.png">
+<img alt="微服务" class="md_relative_url" src="./document/0101.png">
 <img alt="微服务" class="md_relative_url" src="./document/02.png">
 <img alt="微服务" class="md_relative_url" src="./document/06.png">
 <img alt="微服务" class="md_relative_url" src="./document/05.png">
