@@ -40,7 +40,7 @@ public class AOPService {
     最靠近(..)的为方法名,靠近.*(..))的为类名或者接口名,如上例的JoinPointObjP2.*(..))*/
     @Pointcut("execution(* com.company.project.modules.*.*.*.*(..))")
     public void controllerLog() {
-    }
+    }      
 
     // log all of controller
     @Before("controllerLog()")
