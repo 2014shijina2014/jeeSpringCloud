@@ -83,8 +83,6 @@ RedisMQ队列（待开发）、代码生成(单表、主附表、树表、列表
 
 <img alt="微服务" class="md_relative_url" src="./document/901.png">
 <img alt="微服务" class="md_relative_url" src="./document/902.png">
-<img alt="微服务" class="md_relative_url" src="./document/907.png">
-<img alt="微服务" class="md_relative_url" src="./document/908.png">
 
 <img alt="微服务" class="md_relative_url" src="./document/RepositoryService.jpg">
 <img alt="微服务" class="md_relative_url" src="./document/login6.png">
