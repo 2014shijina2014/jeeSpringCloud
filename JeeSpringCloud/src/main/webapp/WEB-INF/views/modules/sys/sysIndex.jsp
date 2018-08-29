@@ -477,6 +477,9 @@
                         <a href="javascript:;" class="J_menuTab" data-id="${ctx}/donation">
                             捐赠榜
                         </a>
+                        <a href="javascript:;" class="J_menuTab" data-id="${ctx}/function">
+                            功能发布
+                        </a>
                     </div>
                 </nav>
                 <button class="roll-nav roll-right J_tabRight"  style="display: none;"><i class="fa fa-forward"></i>
@@ -502,6 +505,7 @@
                 <iframe class="J_iframe" name="iframecommunity" width="100%" height="100%" src="https://jeespring.kf5.com/hc/community/topic/" frameborder="0" data-id="${ctx}/community" seamless></iframe>
                 <iframe class="J_iframe" name="iframeeducation" width="100%" height="100%" src="https://jeespring.kf5.com/hc/community/topic/1013367/" frameborder="0" data-id="${ctx}/education" seamless></iframe>
                 <iframe class="J_iframe" name="iframedonation" width="100%" height="100%" src="https://jeespring.kf5.com/hc/community/topic/1013368/" frameborder="0" data-id="${ctx}/donation" seamless></iframe>
+                <iframe class="J_iframe" name="iframefunction" width="100%" height="100%" src="https://jeespring.kf5.com/hc/community/topic/1013369/" frameborder="0" data-id="${ctx}/function" seamless></iframe>
             </div>
             <div class="footer">
                 <div class="pull-left"><a href="http://www.jeespring.org"></a> © 2018 All Rights Reserved. JeeSpring</div>
