@@ -1,4 +1,4 @@
-﻿#JeeSpringCloud
+﻿#JeeSpringCloud-互联网云快速开发框架
 
 帮忙标星、点赞，申请码云最有价值开源项<br>
 演示版地址：http://yocity.imwork.net:10858/admin?login<br>
