@@ -8,7 +8,8 @@ JeeSpringCloudV2.5-互联网云快速开发框架
 
 一、平台简介
 -----------------------------------
-帮忙标星、点赞，申请码云最有价值开源项<br>
+JeeSpringCloud码云最有价值开源项<br>
+帮忙标星、点赞<br>
 演示版地址：http://yocity.imwork.net:10858/admin?login<br>
  JeeSpring官方QQ群：<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=b07802df867a4047251ac62b35698ed2d94b31f95599609eff4eabcbe361c402">328910546</a>
 
