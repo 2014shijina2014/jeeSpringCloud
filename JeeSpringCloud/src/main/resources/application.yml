@@ -134,10 +134,10 @@ page:
 userfiles:
   basedir: /data/jeespring/upload
 email:
-  from: 516821420@qq.com
+  from: 516821420xx@qq.com
   fromName: jeespring
-  username: 516821420@qq.com
-  password: nxpnalicxljjcaec
+  username: 516821420xx@qq.com
+  password: nxpna
 job:
   company:
       companyScheduledTaskService:
