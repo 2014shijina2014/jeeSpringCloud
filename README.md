@@ -6,6 +6,8 @@ JeeSpringCloudV2.5-互联网云快速开发框架
 
 当前最新版本： 2.5（发布日期：20180829）
 当前最新版本： 2.51（发布日期：20180903）开发dubbo模块
+<img alt="qq群" class="md_relative_url" src="./document/qq.png">
+
 
 一、平台简介
 -----------------------------------
