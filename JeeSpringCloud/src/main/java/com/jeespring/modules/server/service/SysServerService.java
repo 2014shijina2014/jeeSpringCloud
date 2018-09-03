@@ -5,7 +5,8 @@ package com.jeespring.modules.server.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
+//import org.springframework.stereotype.Service;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -15,15 +16,19 @@ import com.jeespring.modules.server.entity.SysServer;
 import com.jeespring.modules.server.dao.SysServerDao;
 import com.alibaba.fastjson.JSON;
 import com.jeespring.common.redis.RedisUtils;
+import com.alibaba.dubbo.config.annotation.Service;
 
 /**
  * 服务器监控Service
  * @author JeeSpring
  * @version 2018-08-20
  */
-@Service
+
+//启用dubbo服务器时，要去掉下面注解
+//com.alibaba.dubbo.config.annotation.Service(interfaceClass = ISysServerService.class,version = "1.0.0", timeout = 60000)
+@org.springframework.stereotype.Service
 @Transactional(readOnly = true)
-public class SysServerService extends AbstractBaseService<SysServerDao, SysServer> {
+public class SysServerService extends AbstractBaseService<SysServerDao, SysServer> implements ISysServerService{
 
 	/**
 	 * redis caches

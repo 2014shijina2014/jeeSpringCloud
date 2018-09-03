@@ -11,6 +11,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.jeespring.modules.server.service.ISysServerService;
 import com.jeespring.modules.sys.service.SysConfigService;
 import org.apache.shiro.authz.annotation.Logical;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -34,6 +35,7 @@ import com.jeespring.common.utils.excel.ExportExcel;
 import com.jeespring.common.utils.excel.ImportExcel;
 import com.jeespring.modules.server.entity.SysServer;
 import com.jeespring.modules.server.service.SysServerService;
+import com.alibaba.dubbo.config.annotation.Reference;
 /**
  * 服务器监控Controller
  * @author JeeSpring
@@ -44,12 +46,19 @@ import com.jeespring.modules.server.service.SysServerService;
 public class SysServerController extends AbstractBaseController {
 
 	@Autowired
-	private SysServerService sysServerService;
+	private ISysServerService sysServerService;
 	@Autowired
 	private SysConfigService sysConfigService;
 
+	//调用dubbo服务器是，要去掉下面注解
+	@Reference(version = "1.0.0")
+	private ISysServerService iSysServerService;
+
 	@ModelAttribute
 	public SysServer get(@RequestParam(required=false) String id) {
+		if(Global.isDubbo() && iSysServerService!=null){
+			sysServerService=iSysServerService;
+		}
 		SysServer entity = null;
 		if (StringUtils.isNotBlank(id)){
 			entity = sysServerService.getCache(id);
