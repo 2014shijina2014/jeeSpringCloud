@@ -377,6 +377,13 @@ public class RedisUtils {
         return false;
     }
 
+    public static boolean isRun(){
+        if(Global.getConfig("spring.redis.run")=="true") {
+            return true;
+        }
+        return false;
+    }
+
     private boolean listFlush(){
         if(Global.getConfig("spring.redis.listFlush")=="true")
             return true;

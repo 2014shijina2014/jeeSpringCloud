@@ -4,6 +4,7 @@
 package com.jeespring.common.web;
 
 import com.jeespring.common.mapper.JsonMapper;
+import com.jeespring.common.redis.RedisUtils;
 import com.jeespring.common.utils.DateUtils;
 import com.jeespring.common.validator.BeanValidators;
 import com.jeespring.modules.oauth.service.OauthService;
@@ -191,7 +192,7 @@ public abstract class AbstractBaseController {
     @ModelAttribute
     protected void APIHandler(HttpServletRequest request, HttpServletResponse response) {
         try{
-
+            if(!RedisUtils.isRun()){ return;}
             //if(request.getRequestURI().indexOf("/rest/")<0) return;
             if(request.getRequestURI().indexOf("/rest/oauth/apiTimeLimiFaild")>=0) return;
             if(request.getRequestURI().indexOf("/admin?login")>=0) return;
@@ -221,6 +222,7 @@ public abstract class AbstractBaseController {
     @ModelAttribute
     protected void RestHandler(HttpServletRequest request, HttpServletResponse response) {
         try{
+            if(!RedisUtils.isRun()){ return;}
             if(request.getRequestURI().indexOf("/rest/")<0) return;
             if(request.getRequestURI().indexOf("/rest/oauth/token")>=0) return;
             if(request.getRequestURI().indexOf("/rest/oauth/faild")>=0) return;

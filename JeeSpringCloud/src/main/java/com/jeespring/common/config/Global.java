@@ -40,7 +40,7 @@ public class Global {
      * 当前对象实例
      */
     private static Global global = new Global();
-        
+
     /**
      * 保存全局属性值
      */
@@ -118,6 +118,10 @@ public class Global {
         return dmd;
     }
 
+    public static Boolean isDubbo() {
+        String dm = getConfig("dubbo.run");
+        return "true".equals(dm) || "1".equals(dm);
+    }
 
     /**
      * 获取上传文件的根目录
