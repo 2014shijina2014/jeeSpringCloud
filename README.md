@@ -6,16 +6,14 @@ JeeSpringCloudV2.5-互联网云快速开发框架
 
 当前最新版本： 2.5（发布日期：20180829）
 当前最新版本： 2.51（发布日期：20180903）开发dubbo模块
-<img alt="qq群" class="md_relative_url" src="./document/qq.png">
-
 
 一、平台简介
 -----------------------------------
 JeeSpringCloud码云最有价值开源项<br>
 帮忙标星、点赞<br>
 演示版地址：http://yocity.imwork.net:10858/admin?login<br>
- JeeSpring官方QQ群：<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=b07802df867a4047251ac62b35698ed2d94b31f95599609eff4eabcbe361c402"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="open-capacity-platform交流" title="open-capacity-platform交流">328910546</a>
-
+ JeeSpring官方QQ群：<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=b07802df867a4047251ac62b35698ed2d94b31f95599609eff4eabcbe361c402"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="open-capacity-platform交流" title="open-capacity-platform交流">328910546</a><br>
+<img alt="qq群" class="md_relative_url" src="./document/qq.png"><br>
 JeeSpringCloudV2.5-互联网云快速开发框架模块包含定时任务调度、服务器监控、平台监控、异常邮件监控、服务器Down机邮件监控、平台设置、开发平台、邮件监控、图表监控、地图监控、单点登录、Redis分布式高速缓存、<br>
 ActiveMQ队列、会员、营销、在线用户、日志、在线人数、访问次数、调用次数、直接集群、接口文档、生成模块、代码实例、安装视频、教程文档、dubbo（待开发）、springCloud、SpringBoot、mybatis、springmvc、IOC、AOP、定时任务、切面缓存、MVC、事务管理。<br>
 RedisMQ队列（待开发）、代码生成(单表、主附表、树表、列表和表单、增删改查云接口、redis高速缓存对接代码、图表统计、地图统计、vue.js)、工作流（待开发）<br>
