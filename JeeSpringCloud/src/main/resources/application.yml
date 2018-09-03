@@ -38,6 +38,9 @@ info: #定义各种额外的详情给服务端显示
     version: "@project.version@"
     spring-boot-version: "@project.parent.version@"
 spring:
+#dubbo的消费者和提供者配置，默认为消费者dubboConsumer。如果要启用提供者，请配置为dubboProvider。
+  #profiles:
+    #active: dubboConsumer
   application:
     name: jeeSpring
   #spring boot admin
@@ -134,10 +137,10 @@ page:
 userfiles:
   basedir: /data/jeespring/upload
 email:
-  from: 516821420xx@qq.com
+  from: 516821420@qq.com
   fromName: jeespring
-  username: 516821420xx@qq.com
-  password: nxpna
+  username: 516821420@qq.com
+  password: nxpnalicxljjcaec
 job:
   company:
       companyScheduledTaskService:
@@ -151,7 +154,7 @@ job:
           #run: 0 0 12 * * ?" 每天中午12点触发
 
 demoMode: true
-demoModeDescription: 演示版启用为系统能正常演示，暂时不允许操作！
+demoModeDescription: 演示版启用，为系统能正常演示，暂时不允许操作！系统配置可开启正式版！功能全开源！每周周一再更新！
 # Shiro
 shiro:
   user:
@@ -175,3 +178,12 @@ shiro:
     dbSyncPeriod: 1
     # 相隔多久检查一次session的有效性，默认就是10分钟
     validationInterval: 10
+#dubbo客户端,使用dubbo时,请启动zookeeper
+dubbo:
+  application:
+    name: consumer
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  scan:
+    base-packages: com.jeespring.modules.server.web
+  run: true
