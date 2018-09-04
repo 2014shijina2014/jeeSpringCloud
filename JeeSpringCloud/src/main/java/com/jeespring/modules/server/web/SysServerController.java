@@ -45,20 +45,15 @@ import com.alibaba.dubbo.config.annotation.Reference;
 @RequestMapping(value = "${adminPath}/sys/sysServer")
 public class SysServerController extends AbstractBaseController {
 
+	//调用dubbo服务器是，要去掉下面注解
+	//@Reference(version = "1.0.0")
 	@Autowired
 	private ISysServerService sysServerService;
 	@Autowired
 	private SysConfigService sysConfigService;
 
-	//调用dubbo服务器是，要去掉下面注解
-	@Reference(version = "1.0.0")
-	private ISysServerService iSysServerService;
-
 	@ModelAttribute
 	public SysServer get(@RequestParam(required=false) String id) {
-		if(Global.isDubbo() && iSysServerService!=null){
-			sysServerService=iSysServerService;
-		}
 		SysServer entity = null;
 		if (StringUtils.isNotBlank(id)){
 			entity = sysServerService.getCache(id);
