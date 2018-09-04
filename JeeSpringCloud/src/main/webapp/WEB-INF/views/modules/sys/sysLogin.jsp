@@ -106,12 +106,13 @@
 				   style="display:none;background-color: white;opacity: 1;visibility: visible;position: absolute;top: 0px;bottom: 0px;left: 0px;right: 0px;height: 100%;width: 100%;object-fit:cover;object-position: center center;"
 				   src="../static/common/login/images/flat-avatar1.mp4"></video>
 			<div id="menu" style="z-index: 10000;position: absolute;top: 0px;left: 0px;border-radius: 3px;padding: 10px;width: 100%;margin: auto 50px;">
-				<a href="#" style="float: left;color: #fff;" class="btn">介绍</a>
-				<a href="#" style="float: left;color: #fff;" class="btn">帮助</a>
+				<a target="_blank" href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud" style="float: left;color: #fff;" class="btn">介绍</a>
+				<a target="_blank" href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/pages" style="float: left;color: #fff;" class="btn">在线文档</a>
+				<a target="_blank" href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files" style="float: left;color: #fff;" class="btn">帮助</a>
 			</div>
 		<div class="row" id="loginPage" style="padding: 3em;">
 			<div class="col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">
-				<img id="logo" class="img-circle" src="../static/common/login/images/flat-avatar.png" style="width: 150px;height: 150px;">
+				<img id="logo" class="img-circle hidden-xs" src="../static/common/login/images/flat-avatar.png" style="width: 150px;height: 150px;">
 				<h1>${fns:getConfig('productName')}-${systemMode}-${version}</h1>
 				<sys:message content="${message}"/>
 				<!-- 0:隐藏tip, 1隐藏box,不设置显示全部 -->
@@ -143,7 +144,7 @@
 			</div>			
 		</div>
 
-		<div id="hplaT" style="position: absolute;bottom: 0px;right: 0px;/* background: rgba(255,255,255,.2); */border: 1px solid rgba(255,255,255,.3);border-radius: 3px;padding: 10px;width: 30%;">
+		<div id="hplaT" class="hidden-xs" style="position: absolute;bottom: 0px;right: 0px;/* background: rgba(255,255,255,.2); */border: 1px solid rgba(255,255,255,.3);border-radius: 3px;padding: 10px;width: 30%;">
 			<a class="search" target="_blank" href="https://cn.bing.com/search?q=jeespring" style="color:#fff;text-decoration:none;"><div id="hplaTtl"></div></a>
 			<input type="button" class="btn btn-white btn-outline btn-rounded" value="刷新" style="float: right;" onclick="readyInfo()">
 			<input type="button" class="btn btn-white btn-outline btn-rounded" value="播放" style="float: right;" onclick="$('#vid').show(1000);document.getElementById('vid').play()">
