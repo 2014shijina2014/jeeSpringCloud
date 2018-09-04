@@ -29,6 +29,14 @@ public class OauthService {
     @Autowired
     private RedisUtils redisUtils;
 
+    public boolean isOauthOpen(){
+        SysConfig sysConfigOauth=new SysConfig();
+        sysConfigOauth.setType("oauthOpen");
+        SysConfig sysConfigsOauth=sysConfigService.findListFirstCache(sysConfigOauth);
+        if(sysConfigsOauth.getValue().equals("true")) return true;
+        return false;
+    }
+
     public Result token( String oauthId, String oauthSecret,String ip){
         if(oauthId==null || oauthSecret==null) {
             return ResultFactory.getErrorResult("授权ID和授权密钥不能为空！");
@@ -133,12 +141,12 @@ public class OauthService {
             key=redisUtils.SHIRO_REDIS+":"+subject.getSession().getId().toString();
         if(Integer.valueOf(userOnlineAmount.getValue())<countShiro && key!=null){
             redisUtils.remove(key);
-            return ResultFactory.getErrorResult(countShiro+"/"+userOnlineAmount.getValue());
+            return ResultFactory.getErrorResult("在线控制：在线"+countShiro+"人/总控制"+userOnlineAmount.getValue()+"人");
         }
         if(!redisUtils.exists(key)){
-            return ResultFactory.getErrorResult(countShiro+"/"+userOnlineAmount.getValue());
+            return ResultFactory.getErrorResult("在线控制：在线"+countShiro+"人/总控制"+userOnlineAmount.getValue()+"人");
         }
-        return ResultFactory.getSuccessResult(countShiro+"/"+userOnlineAmount.getValue());
+        return ResultFactory.getSuccessResult("在线控制：在线"+countShiro+"人/总控制"+userOnlineAmount.getValue()+"人");
     }
 
 
