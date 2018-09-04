@@ -105,7 +105,7 @@ spring:
       minIdle: 0
     timeout: 0
     keyPrefix: JeeSpring_  #Redis key 前缀
-    run: true  #Redis是否启动
+    run: false  #Redis是否启动;true为启动;false为不启动;
     listFlush: true   #list记录根据添加修改删除自动清除
     expireTime: 900     #缓存有效时间15分钟
     expireTimeShiro: 1800     #缓存有效时间30分钟
