@@ -237,8 +237,17 @@ public class GenTableController extends AbstractBaseController
     @RequestMapping(value={"genCode"})
     public String genCode(GenScheme genScheme, Model model, RedirectAttributes redirectAttributes)
     {
+        if(sysConfigService.isDemoMode()){
+            String msg="<br>"+genScheme.getGenTable().getName()
+                    + "代码和菜单、接口已生成成功;<br/>如果启用redis:代码生成后，要退出，再登陆。<br/>菜单路径：<br/>"
+                    + "接口路径："+"rest/list或者get或者save或者delete<br/>...";
+            addMessage(redirectAttributes, sysConfigService.isDemoModeDescription()+msg);
+            return "redirect:" + adminPath + "/gen/genTable/";
+        }
+
         String paraentId="158586ffb6b44175885680d1c93f05bd";
         String result = this.genSchemeService.save(genScheme);
+
         Menu menu=new Menu();
         List<Menu> menus=systemService.findAllMenu();
         for (Menu menuItem:menus) {
@@ -383,12 +392,6 @@ public class GenTableController extends AbstractBaseController
         menuImport.setParent(menu);
         systemService.saveMenu(menuImport);
 
-        addMessage(redirectAttributes, genScheme.getGenTable().getName()
-                + "代码和菜单、接口已生成成功<br/>菜单路径："+menu.getHref()+"<br/>"
-                + "接口路径："+"rest/"+menu.getHref()+"/list或者get或者save或者delete<br/>"
-                + result);
-
-
         //total
         Menu menuTotal=new Menu();
         menuTotal.setName("统计");
@@ -409,7 +412,7 @@ public class GenTableController extends AbstractBaseController
         systemService.saveMenu(menuTotal);
 
         addMessage(redirectAttributes, genScheme.getGenTable().getName()
-                + "代码和菜单、接口已生成成功<br/>菜单路径："+menu.getHref()+"<br/>"
+                + "代码和菜单、接口已生成成功;<br/>如果启用redis:代码生成后，要退出，再登陆。<br/>菜单路径："+menu.getHref()+"<br/>"
                 + "接口路径："+"rest/"+menu.getHref()+"/list或者get或者save或者delete<br/>"
                 + result);
 
