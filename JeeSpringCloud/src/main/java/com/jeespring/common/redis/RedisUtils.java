@@ -263,10 +263,14 @@ public class RedisUtils {
      */
     public void remove(final String key) {
         if(!run()) { return ; }
-        if(key.contains(SHIRO_REDIS)) {
-            stringRedisTemplate.delete(key);
-        }else{
-            redisTemplate.delete(key);
+        try{
+            if(key.contains(SHIRO_REDIS)) {
+                stringRedisTemplate.delete(key);
+            }else{
+                redisTemplate.delete(key);
+            }
+        } catch (Exception e) {
+            logger.error("RedisUtils exists:"+RUN_MESSAGE+e.getMessage(), RUN_MESSAGE+e.getMessage());
         }
     }
 
