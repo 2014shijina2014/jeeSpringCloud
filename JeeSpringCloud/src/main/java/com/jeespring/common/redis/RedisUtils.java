@@ -21,7 +21,7 @@ import redis.clients.jedis.Jedis;
 
 /**
  * redicache 工具类
- *
+ * 在application.yml文件内的Spring-redis的run配置启动,true为启动;false为不启动;
  */
 @SuppressWarnings("unchecked")
 @Component
