@@ -192,7 +192,7 @@ public abstract class AbstractBaseController {
     @ModelAttribute
     protected void APIHandler(HttpServletRequest request, HttpServletResponse response) {
         try{
-            if(!RedisUtils.isRun()){ return;}
+            if(!RedisUtils.isRun() && !oauthService.isOauthOpen()){ return;}
             //if(request.getRequestURI().indexOf("/rest/")<0) return;
             if(request.getRequestURI().indexOf("/rest/oauth/apiTimeLimiFaild")>=0) return;
             if(request.getRequestURI().indexOf("/admin?login")>=0) return;
@@ -222,7 +222,7 @@ public abstract class AbstractBaseController {
     @ModelAttribute
     protected void RestHandler(HttpServletRequest request, HttpServletResponse response) {
         try{
-            if(!RedisUtils.isRun()){ return;}
+            if(!RedisUtils.isRun() && !oauthService.isOauthOpen()){ return;}
             if(request.getRequestURI().indexOf("/rest/")<0) return;
             if(request.getRequestURI().indexOf("/rest/oauth/token")>=0) return;
             if(request.getRequestURI().indexOf("/rest/oauth/faild")>=0) return;
